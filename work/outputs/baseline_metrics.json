@@ -1,0 +1,129 @@
+{
+  "rule": "April clicks >= 2x Feb-Mar average, with >=10 clicks in Feb and in Mar; score = 100 * min(log2(ratio)/3, 1) * impressions_pctile_apr",
+  "min_ratio": 2.0,
+  "history_floor": 10,
+  "tie_break": "hash(content_hash_id|42)",
+  "disclosures": [
+    "direction chosen after signal check",
+    "history guard added after v2 weak picks",
+    "templated block excluded after diagnostics"
+  ],
+  "templated_block": {
+    "min_copies": 20,
+    "rows_excluded": 833,
+    "decline_rate": 0.9964
+  },
+  "pooled_including_block_not_headline": {
+    "precision_at_10": 0.4,
+    "precision_at_50": 0.74,
+    "precision_at_100": 0.87
+  },
+  "rows_analysis_frame": 15680,
+  "base_rate": 0.3854,
+  "n_flagged": 435,
+  "flagged_decline_rate": 0.4207,
+  "precision_at_10": 0.5,
+  "precision_at_50": 0.42,
+  "precision_at_100": 0.37,
+  "v2_no_guard": {
+    "n_flagged": 4058,
+    "flagged_decline_rate": 0.4455,
+    "precision_at_10": 0.3,
+    "precision_at_50": 0.38,
+    "precision_at_100": 0.4
+  },
+  "tied_rows_at_top50_cutoff": 1,
+  "largest_client_share_among_flagged": 0.2253,
+  "signals": [
+    {
+      "signal": "A. consecutive monthly click falls",
+      "verdict": "OPPOSITE",
+      "table": [
+        {
+          "_b": "0 falls",
+          "n": 7076,
+          "decline_rate": 0.393,
+          "vs_base": 0.008
+        },
+        {
+          "_b": "1 fall",
+          "n": 7077,
+          "decline_rate": 0.388,
+          "vs_base": 0.002
+        },
+        {
+          "_b": "2 falls",
+          "n": 1527,
+          "decline_rate": 0.339,
+          "vs_base": -0.046
+        }
+      ]
+    },
+    {
+      "signal": "B. CTR vs position-peers (quartiles)",
+      "verdict": "FALSE",
+      "table": [
+        {
+          "_b": "Q1 lowest CTR vs peers",
+          "n": 3920,
+          "decline_rate": 0.396,
+          "vs_base": 0.011
+        },
+        {
+          "_b": "Q2",
+          "n": 3920,
+          "decline_rate": 0.385,
+          "vs_base": 0.0
+        },
+        {
+          "_b": "Q3",
+          "n": 3920,
+          "decline_rate": 0.387,
+          "vs_base": 0.002
+        },
+        {
+          "_b": "Q4 highest",
+          "n": 3920,
+          "decline_rate": 0.372,
+          "vs_base": -0.013
+        }
+      ]
+    },
+    {
+      "signal": "C. April clicks vs Feb-Mar average",
+      "verdict": "CONFIRMED",
+      "table": [
+        {
+          "_b": "a) Apr < 0.5x prior",
+          "n": 948,
+          "decline_rate": 0.358,
+          "vs_base": -0.028
+        },
+        {
+          "_b": "b) 0.5-0.8x",
+          "n": 2423,
+          "decline_rate": 0.359,
+          "vs_base": -0.027
+        },
+        {
+          "_b": "c) 0.8-1.25x (flat)",
+          "n": 3989,
+          "decline_rate": 0.365,
+          "vs_base": -0.02
+        },
+        {
+          "_b": "d) 1.25-2x",
+          "n": 3439,
+          "decline_rate": 0.42,
+          "vs_base": 0.035
+        },
+        {
+          "_b": "e) > 2x (surge)",
+          "n": 3798,
+          "decline_rate": 0.442,
+          "vs_base": 0.057
+        }
+      ]
+    }
+  ]
+}
