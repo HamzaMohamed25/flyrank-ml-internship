@@ -1,0 +1,287 @@
+{
+  "seed": 42,
+  "k": 50,
+  "frozen_before_june": {
+    "model": "Logistic Regression, 9 contract features, trained at the 1 May point only",
+    "rule": "ML-07",
+    "min_ratio": 2.0,
+    "history_floor": 10,
+    "dip_cut": 0.8,
+    "extreme_jump": 7.0,
+    "low_confidence_clicks": 30
+  },
+  "versions": {
+    "python": "3.13.16",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1"
+  },
+  "training_pages": 15680,
+  "scoring_pages": 19259,
+  "identical_block_excluded": {
+    "training": 833,
+    "scoring": 173
+  },
+  "june_label_read": true,
+  "queue_action_mix": {
+    "investigate_quiet_risk": 49,
+    "verify_spike_then_review": 1
+  },
+  "queue_confidence": {
+    "low": 41,
+    "medium": 9
+  },
+  "archetypes_dev": [
+    {
+      "archetype": "1 new or thin history",
+      "pages": 7322,
+      "next_month_decline_rate": 0.418
+    },
+    {
+      "archetype": "2 surge on an established page",
+      "pages": 435,
+      "next_month_decline_rate": 0.421
+    },
+    {
+      "archetype": "3 established, steady or rising",
+      "pages": 4806,
+      "next_month_decline_rate": 0.356
+    },
+    {
+      "archetype": "4 established, dipping",
+      "pages": 3117,
+      "next_month_decline_rate": 0.348
+    }
+  ],
+  "archetypes_june": [
+    {
+      "archetype": "1 new or thin history",
+      "pages": 8233,
+      "next_month_decline_rate": 0.582
+    },
+    {
+      "archetype": "2 surge on an established page",
+      "pages": 470,
+      "next_month_decline_rate": 0.589
+    },
+    {
+      "archetype": "3 established, steady or rising",
+      "pages": 6280,
+      "next_month_decline_rate": 0.708
+    },
+    {
+      "archetype": "4 established, dipping",
+      "pages": 4276,
+      "next_month_decline_rate": 0.71
+    }
+  ],
+  "sealed_june_evaluation": {
+    "all contract pages": {
+      "pages": 19259,
+      "base_rate": 0.6515914637312425,
+      "Logistic Regression": {
+        "p10": 0.5,
+        "p50": 0.62,
+        "p100": 0.68,
+        "auc": 0.5538207840763462,
+        "curve": {
+          "10": 0.5,
+          "20": 0.55,
+          "30": 0.5333333333333333,
+          "40": 0.6,
+          "50": 0.62,
+          "60": 0.6333333333333333,
+          "70": 0.6285714285714286,
+          "80": 0.65,
+          "90": 0.6666666666666666,
+          "100": 0.68,
+          "110": 0.6636363636363637,
+          "120": 0.6666666666666666,
+          "130": 0.6615384615384615,
+          "140": 0.6714285714285714,
+          "150": 0.6666666666666666,
+          "160": 0.6625,
+          "170": 0.6705882352941176,
+          "180": 0.6777777777777778,
+          "190": 0.6842105263157895,
+          "200": 0.68
+        }
+      },
+      "Frozen rule": {
+        "p10": 0.4,
+        "p50": 0.46,
+        "p100": 0.52,
+        "auc": 0.49662266983469505,
+        "curve": {
+          "10": 0.4,
+          "20": 0.35,
+          "30": 0.43333333333333335,
+          "40": 0.45,
+          "50": 0.46,
+          "60": 0.5,
+          "70": 0.5428571428571428,
+          "80": 0.55,
+          "90": 0.5333333333333333,
+          "100": 0.52,
+          "110": 0.5272727272727272,
+          "120": 0.525,
+          "130": 0.5307692307692308,
+          "140": 0.5285714285714286,
+          "150": 0.52,
+          "160": 0.5375,
+          "170": 0.5529411764705883,
+          "180": 0.5388888888888889,
+          "190": 0.5526315789473685,
+          "200": 0.54
+        }
+      }
+    },
+    "queue population (new or thin history excluded)": {
+      "pages": 11026,
+      "base_rate": 0.7036096499183747,
+      "Logistic Regression": {
+        "p10": 0.8,
+        "p50": 0.82,
+        "p100": 0.78,
+        "auc": 0.5323428526260885,
+        "curve": {
+          "10": 0.8,
+          "20": 0.75,
+          "30": 0.8333333333333334,
+          "40": 0.875,
+          "50": 0.82,
+          "60": 0.8333333333333334,
+          "70": 0.8142857142857143,
+          "80": 0.8125,
+          "90": 0.7888888888888889,
+          "100": 0.78,
+          "110": 0.7818181818181819,
+          "120": 0.7916666666666666,
+          "130": 0.7923076923076923,
+          "140": 0.7928571428571428,
+          "150": 0.7866666666666666,
+          "160": 0.7875,
+          "170": 0.7764705882352941,
+          "180": 0.7722222222222223,
+          "190": 0.7684210526315789,
+          "200": 0.755
+        }
+      },
+      "Frozen rule": {
+        "p10": 0.4,
+        "p50": 0.46,
+        "p100": 0.52,
+        "auc": 0.4882156824415938,
+        "curve": {
+          "10": 0.4,
+          "20": 0.35,
+          "30": 0.43333333333333335,
+          "40": 0.45,
+          "50": 0.46,
+          "60": 0.5,
+          "70": 0.5428571428571428,
+          "80": 0.55,
+          "90": 0.5333333333333333,
+          "100": 0.52,
+          "110": 0.5272727272727272,
+          "120": 0.525,
+          "130": 0.5307692307692308,
+          "140": 0.5285714285714286,
+          "150": 0.52,
+          "160": 0.5375,
+          "170": 0.5529411764705883,
+          "180": 0.5388888888888889,
+          "190": 0.5526315789473685,
+          "200": 0.54
+        }
+      }
+    }
+  },
+  "psi": [
+    {
+      "index": "impressions_apr",
+      "PSI (1 May training vs 1 June scoring)": 0.048,
+      "status": "stable"
+    },
+    {
+      "index": "clicks_apr",
+      "PSI (1 May training vs 1 June scoring)": 0.008,
+      "status": "stable"
+    },
+    {
+      "index": "weighted_position",
+      "PSI (1 May training vs 1 June scoring)": 0.148,
+      "status": "watch"
+    },
+    {
+      "index": "momentum_apr_vs_feb",
+      "PSI (1 May training vs 1 June scoring)": 0.049,
+      "status": "stable"
+    },
+    {
+      "index": "active_days",
+      "PSI (1 May training vs 1 June scoring)": 0.108,
+      "status": "watch"
+    }
+  ],
+  "triggers": [
+    {
+      "check": "eligible pages differ from the training frame by more than 30%",
+      "value": "+22.8%",
+      "would fire": false
+    },
+    {
+      "check": "any key feature has PSI above 0.25",
+      "value": "max 0.148",
+      "would fire": false
+    },
+    {
+      "check": "base rate differs from the training base rate by more than 10 points",
+      "value": "0.704 vs 0.385 (+0.318)",
+      "would fire": true
+    },
+    {
+      "check": "model precision@50 is not above max(base rate, rule) + 5 points",
+      "value": "model 0.82 | rule 0.46 | base 0.70",
+      "would fire": false
+    }
+  ],
+  "gates": [
+    {
+      "no-go rule": "new or thin-history pages never enter the queue",
+      "status": "implemented, asserted",
+      "pages affected": 8233,
+      "in the queue": 0
+    },
+    {
+      "no-go rule": "identical-row blocks are excluded",
+      "status": "implemented, asserted",
+      "pages affected": 173,
+      "in the queue": 0
+    },
+    {
+      "no-go rule": "jumps above 7x go to verification first (low confidence)",
+      "status": "implemented, asserted",
+      "pages affected": 8,
+      "in the queue": 0
+    },
+    {
+      "no-go rule": "a model score alone is never a reason (investigate_quiet_risk)",
+      "status": "implemented",
+      "pages affected": "-",
+      "in the queue": 49
+    },
+    {
+      "no-go rule": "durable-climb pages need a human check",
+      "status": "proposed, not automated",
+      "pages affected": "-",
+      "in the queue": 17
+    },
+    {
+      "no-go rule": "recently optimized pages wait out a cooldown",
+      "status": "NOT implemented (needs optimization history)",
+      "pages affected": "-",
+      "in the queue": "-"
+    }
+  ]
+}
