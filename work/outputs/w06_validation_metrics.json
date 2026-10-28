@@ -1,0 +1,185 @@
+{
+  "seed": 42,
+  "k": 50,
+  "rows": 15680,
+  "time_forward_ran": true,
+  "versions": {
+    "python": "3.13.18",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1"
+  },
+  "design_ladder": [
+    {
+      "design": "random rows",
+      "method": "Logistic Regression",
+      "P@50": 0.58,
+      "AUC": 0.5978,
+      "base rate": 0.3854,
+      "P@50 sd across folds": 0.0469
+    },
+    {
+      "design": "random rows",
+      "method": "Random Forest",
+      "P@50": 0.732,
+      "AUC": 0.6279,
+      "base rate": 0.3854,
+      "P@50 sd across folds": 0.0363
+    },
+    {
+      "design": "random rows",
+      "method": "Frozen rule (ML-07)",
+      "P@50": 0.368,
+      "AUC": 0.502,
+      "base rate": 0.3854,
+      "P@50 sd across folds": 0.0228
+    },
+    {
+      "design": "client-grouped",
+      "method": "Logistic Regression",
+      "P@50": 0.616,
+      "AUC": 0.5813,
+      "base rate": 0.3914,
+      "P@50 sd across folds": 0.078
+    },
+    {
+      "design": "client-grouped",
+      "method": "Random Forest",
+      "P@50": 0.504,
+      "AUC": 0.5711,
+      "base rate": 0.3914,
+      "P@50 sd across folds": 0.1627
+    },
+    {
+      "design": "client-grouped",
+      "method": "Frozen rule (ML-07)",
+      "P@50": 0.364,
+      "AUC": 0.501,
+      "base rate": 0.3914,
+      "P@50 sd across folds": 0.0865
+    },
+    {
+      "design": "time only (train 1 Apr, test 1 May)",
+      "method": "Logistic Regression",
+      "P@50": 0.58,
+      "AUC": 0.558,
+      "base rate": 0.3854,
+      "P@50 sd across folds": NaN
+    },
+    {
+      "design": "time only (train 1 Apr, test 1 May)",
+      "method": "Random Forest",
+      "P@50": 0.5,
+      "AUC": 0.565,
+      "base rate": 0.3854,
+      "P@50 sd across folds": NaN
+    },
+    {
+      "design": "time only (train 1 Apr, test 1 May)",
+      "method": "Frozen rule (ML-07)",
+      "P@50": 0.42,
+      "AUC": 0.502,
+      "base rate": 0.3854,
+      "P@50 sd across folds": NaN
+    },
+    {
+      "design": "client + time (unseen clients, later month)",
+      "method": "Logistic Regression",
+      "P@50": 0.54,
+      "AUC": 0.5687,
+      "base rate": 0.3914,
+      "P@50 sd across folds": 0.1288
+    },
+    {
+      "design": "client + time (unseen clients, later month)",
+      "method": "Random Forest",
+      "P@50": 0.556,
+      "AUC": 0.5593,
+      "base rate": 0.3914,
+      "P@50 sd across folds": 0.0684
+    },
+    {
+      "design": "client + time (unseen clients, later month)",
+      "method": "Frozen rule (ML-07)",
+      "P@50": 0.364,
+      "AUC": 0.501,
+      "base rate": 0.3914,
+      "P@50 sd across folds": 0.0865
+    }
+  ],
+  "feature_ablation": [
+    {
+      "variant": "all 9 features",
+      "model": "Logistic Regression",
+      "P@50": 0.616,
+      "AUC": 0.5813,
+      "base rate": 0.3914
+    },
+    {
+      "variant": "all 9 features",
+      "model": "Random Forest",
+      "P@50": 0.504,
+      "AUC": 0.5711,
+      "base rate": 0.3914
+    },
+    {
+      "variant": "without click-level features (5 removed)",
+      "model": "Logistic Regression",
+      "P@50": 0.5,
+      "AUC": 0.549,
+      "base rate": 0.3914
+    },
+    {
+      "variant": "without click-level features (5 removed)",
+      "model": "Random Forest",
+      "P@50": 0.452,
+      "AUC": 0.5479,
+      "base rate": 0.3914
+    },
+    {
+      "variant": "click-level features only",
+      "model": "Logistic Regression",
+      "P@50": 0.384,
+      "AUC": 0.5187,
+      "base rate": 0.3914
+    },
+    {
+      "variant": "click-level features only",
+      "model": "Random Forest",
+      "P@50": 0.472,
+      "AUC": 0.5503,
+      "base rate": 0.3914
+    }
+  ],
+  "leak_harness": {
+    "P@50": 1.0,
+    "AUC": 1.0,
+    "base rate": 0.3914
+  },
+  "size_strata": [
+    {
+      "April clicks": "10-19 April clicks",
+      "pages": 7066,
+      "base rate": 0.41,
+      "AUC within stratum": 0.527,
+      "precision in top 20% of scores": 0.422,
+      "lift (points)": 1.2
+    },
+    {
+      "April clicks": "20-49",
+      "pages": 5635,
+      "base rate": 0.378,
+      "AUC within stratum": 0.532,
+      "precision in top 20% of scores": 0.428,
+      "lift (points)": 5.0
+    },
+    {
+      "April clicks": "50 or more",
+      "pages": 2979,
+      "base rate": 0.342,
+      "AUC within stratum": 0.479,
+      "precision in top 20% of scores": 0.337,
+      "lift (points)": -0.4
+    }
+  ]
+}
